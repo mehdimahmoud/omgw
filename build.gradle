@@ -32,3 +32,9 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
+
+/* Useful to execute the first time for downloading and installing the appropriate Gradle distribution and
+ runs the build against this downloaded distribution by ignoring if Gradle is pre-installed or not*/
+task wrapper (type: Wrapper) {
+	gradleVersion = '3.3'
+}
