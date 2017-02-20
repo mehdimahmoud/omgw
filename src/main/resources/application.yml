@@ -2,6 +2,15 @@ server:
   port: 8090
   display-name: Movie API Gateway
 
+# management endpoints on an other port
+management:
+  port: 8091
+  security:
+    enabled: false
+
+logging:
+  log: logs/movies-gw.log
+
 security:
   user:
     password: password
