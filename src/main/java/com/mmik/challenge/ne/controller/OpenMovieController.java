@@ -8,31 +8,28 @@ package com.mmik.challenge.ne.controller;
 import com.mmik.challenge.ne.dto.OmDetailsDTO;
 import com.mmik.challenge.ne.dto.OmSearchResponseDTO;
 import com.mmik.challenge.ne.service.OpenMovieService;
-import com.sun.javafx.util.Utils;
-import com.sun.org.apache.xpath.internal.operations.Number;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.slf4j.helpers.Util;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Required;
+import org.springframework.stereotype.Component;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
-import org.springframework.util.NumberUtils;
 import org.springframework.util.StringUtils;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.constraints.NotNull;
-import java.text.NumberFormat;
-import java.util.List;
 import java.util.Optional;
 
-@RestController
+@Component
 @RequestMapping("/movies")
-public class OpenMovieController {
-    // Query builder variable:
-    MultiValueMap<String,String> queryMap = null;
-
+public class OpenMovieController extends BaseController{
     Logger log = LoggerFactory.getLogger(OpenMovieController.class);
+
+    // Query builder variable:
+    MultiValueMap<String,Object> queryMap = null;
 
     @Autowired
     OpenMovieService openMovieService;
@@ -61,7 +58,7 @@ public class OpenMovieController {
     @GetMapping("/{id}")
     public OmDetailsDTO getMovieDetails(@PathVariable @NotNull String id) {
         if (StringUtils.isEmpty(id))
-        throw new IllegalArgumentException(String.format("Movie ID should not be null: ID = {%s}",id));
+            throw new IllegalArgumentException(String.format("Movie ID should not be null: ID = {%s}",id));
 
         queryMap = new LinkedMultiValueMap<>();
         queryMap.add("i",id);

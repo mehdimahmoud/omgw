@@ -28,6 +28,8 @@ repositories {
 }
 
 dependencies {
+	// hot swap with LiveReload for Dev Environment only
+	compile("org.springframework.boot:spring-boot-devtools")
 	// Rest API Client:
 	compile('io.springfox:springfox-swagger-ui:2.6.1')
 	compile('io.springfox:springfox-swagger2:2.6.1')
@@ -37,6 +39,14 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-security')
 	// Spring MVC (RestController + RestTemplate)
 	compile('org.springframework.boot:spring-boot-starter-web')
+	// Web libraries managed/packaged by WebJars into JAR
+	compile('org.webjars:jquery:3.1.1-1')
+	compile('org.webjars:angularjs:1.6.1')
+	compile('org.webjars.bower:angular-route:1.6.1')
+	compile('org.webjars:bootstrap:3.3.7-1')
+	compile('org.webjars:bootstrap-material-design:0.5.9')
+
+	// Test
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
@@ -45,4 +55,8 @@ dependencies {
  runs the build against this downloaded distribution by ignoring if Gradle is pre-installed or not*/
 task wrapper (type: Wrapper) {
 	gradleVersion = '3.3'
+}
+
+bootRun {
+	addResources = true
 }

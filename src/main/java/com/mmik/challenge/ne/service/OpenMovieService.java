@@ -10,6 +10,6 @@ import java.util.Optional;
  * Created by mmik on 19/02/2017.
  */
 public interface OpenMovieService {
-    Optional<OmSearchResponseDTO> searchMovies(MultiValueMap<String,String> queryMap);
-    Optional<OmDetailsDTO> getMovieDetails(MultiValueMap<String,String> queryMap);
+    Optional<OmSearchResponseDTO> searchMovies(MultiValueMap<String,Object> queryMap);
+    Optional<OmDetailsDTO> getMovieDetails(MultiValueMap<String,Object> queryMap);
 }

@@ -18,3 +18,4 @@ security:
 resources:
   server1:
      omdbapi: http://www.omdbapi.com/
+

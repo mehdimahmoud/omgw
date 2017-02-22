@@ -32,13 +32,13 @@ public class OpenMovieServiceImpl implements OpenMovieService {
     private String baseUrlOmDbApi;
 
     @Override
-    public Optional<OmSearchResponseDTO> searchMovies(MultiValueMap<String,String> queryMap) {
+    public Optional<OmSearchResponseDTO> searchMovies(MultiValueMap<String,Object> queryMap) {
         Optional<OmSearchResponseDTO> oOmSRDto = Optional.of(restTemplate.getForObject(getUriComponentsBuilder(baseUrlOmDbApi, queryMap), OmSearchResponseDTO.class));
         return oOmSRDto;
     }
 
     @Override
-    public Optional<OmDetailsDTO> getMovieDetails(MultiValueMap<String,String> queryMap) {
+    public Optional<OmDetailsDTO> getMovieDetails(MultiValueMap<String,Object> queryMap) {
         Optional<OmDetailsDTO> oOmDDto = Optional.of(restTemplate.getForObject(getUriComponentsBuilder(baseUrlOmDbApi, queryMap),OmDetailsDTO.class));
         return oOmDDto;
     }
