@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movies</title>
+</head>
+<body>
+    <div class="main-content__title-divider">
+        <span class="main-content__title-divider__title">3,745 <span>titles</span></span>
+    </div>
+    <div jw-infinite-scroll="addMoreItems()" jw-infinite-scroll-id="popular"
+         jw-infinite-scroll-disabled="fetchingState.isFetching || titles.popular.items.length >= totalResults.popular || !!isPopularEndReached"
+         jw-infinite-scroll-distance="1" jw-infinite-scroll-listen-for-event="infinite-scroll.manual">
+        <div class="main-content__poster"
+             ng-repeat="title in titles.popular.items track by (title.object_type + title.id + '-' + $index)"
+             ng-init="$last &amp;&amp; hasRendered()"
+             ng-show="::title.poster"
+             snowplow-data-contextable=""
+             contextable-type="title"
+             contextable-data="::title">
+            <div class="main-content__poster__image">
+                <title-card target-title="::title">
+                    <div snowplow-data-contextable="" contextable-type="title" contextable-data="::targetTitle" class="pos-relative">
+                        <watchlist-ribbon content-type="::targetTitle.object_type" content-id="::targetTitle.id" target-title="::targetTitle">
+                            <div class="bookmark" ng-click="$ctrl.toggle($ctrl.contentType, $ctrl.contentId)">
+                            </div>
+                        </watchlist-ribbon>
+                    </div>
+                    <a ng-href="/uk/tv-series/the-walking-dead" href="/uk/tv-series/the-walking-dead">
+                        <div class="main-content__poster__image__container tv-show"
+                             ng-class="::{'tv-show': ['show', 'show_season'].indexOf(targetTitle.object_type) !== -1}">
+                            <!---->
+                            <div ng-if="::(['show', 'show_season'].indexOf(targetTitle.object_type) !== -1)" class="tv-show__badge">
+                                <span translate="WEBAPP_SHOW_BADGE" translate-default="TV">TV</span>
+                            </div>
+                            <!---->
+                            <!---->
+                            <img class="img-responsive poster notransition"
+                                 style="width: 100%; height: auto; opacity: 1;"
+                                 alt="The Walking Dead"
+                                 ng-if="::targetTitle.poster"
+                                 ng-src="https://static.justwatch.com/poster/458725/s166/the-walking-dead"
+                                 fader-on-load="" src="https://static.justwatch.com/poster/458725/s166/the-walking-dead">
+                            <!---->
+                        </div>
+                </a>
+                </title-card>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

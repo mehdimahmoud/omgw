@@ -1,0 +1,43 @@
+.search {
+    padding: 6px;
+    color: #D5D5D5;
+    width: 45%;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    position: relative;
+    height: 48px;
+    float: right;
+}
+
+.search__icon {
+    position: absolute;
+    z-index: 1;
+    top: 12px;
+    right: 10px;
+    font-size: 20px;
+    /*color: #183F4E;*/
+    color: #fff;
+    cursor: pointer;
+}
+
+.glyphicon {
+    top: 1px;
+    font-family: 'Glyphicons Halflings';
+    font-weight: 200;
+    /*line-height: 1;*/
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.caret, .glyphicon {
+    display: inline-block;
+}
+
+.collapsing, .dropdown, .dropup, .glyphicon {
+    position: relative;
+}
+
+.glyphicon, .tooltip, address {
+    font-style: normal;
+}
