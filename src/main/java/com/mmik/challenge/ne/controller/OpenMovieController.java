@@ -49,7 +49,7 @@ public class OpenMovieController extends BaseController{
         OmSearchResponseDTO omSearchResponseDTO = oOmS.get();
 
         if (oOmS.isPresent()) {
-            log.info(omSearchResponseDTO.toString());
+            log.debug(omSearchResponseDTO.toString());
             return omSearchResponseDTO;
         }else
             throw new IllegalArgumentException(String.format("Searching failed due to parameter: title = {%s}",title));
@@ -66,7 +66,7 @@ public class OpenMovieController extends BaseController{
         OmDetailsDTO omDetailsDTO = oOmD.get();
 
         if(oOmD.isPresent()) {
-            log.info(omDetailsDTO.toString());
+            log.debug(omDetailsDTO.toString());
             return omDetailsDTO;
         }else
             throw new IllegalArgumentException(String.format("Movie's details can't be retrieved due to: Movie ID  = {%s}",id));
