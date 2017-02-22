@@ -1,0 +1,10 @@
+version: '2'
+services:
+   omgw:
+      container_name: c_omgw
+      build: ./build/docker
+      image: mmik/omgw:latest
+      ports:
+        - "8090:8090"
+        - "8091:8091"
+      command: ./gradlew bootRun
