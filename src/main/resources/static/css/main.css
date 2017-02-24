@@ -1,7 +1,7 @@
 .search {
-    padding: 6px;
+    /*padding: 6px;*/
     color: #D5D5D5;
-    width: 45%;
+    width: 100%;
     -webkit-box-flex: 1;
     -ms-flex: 1;
     flex: 1;
@@ -11,6 +11,8 @@
 }
 
 .search__icon {
+    margin-left: 10px;
+    margin-bottom: 10px;
     position: absolute;
     z-index: 1;
     top: 12px;
@@ -40,4 +42,8 @@
 
 .glyphicon, .tooltip, address {
     font-style: normal;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.5) !important;
 }

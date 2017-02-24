@@ -41,6 +41,13 @@ div {
     margin-left: auto;
 }
 
+.container-view {
+    /*overflow-y: auto !important;*/
+    overflow: auto hidden;
+    max-height: 100vh;
+
+}
+
 *, :after, :before {
     box-sizing: border-box;
 }
@@ -64,6 +71,7 @@ div {
 }
 
 .main-content__title-divider__title {
+    margin-top: 5px;
     padding: 1px 8px;
     background: #0d2e3e;
     border-radius: 20px;
@@ -85,6 +93,36 @@ div {
         padding: 2px;
         margin: 10px;
         background: rgba(255, 255, 255, .06);
+    }
+}
+
+.main-content__poster__image, .watchlist__head {
+    position: relative;
+}
+@media (min-width: 560px) {
+    .main-content__poster__image, .timeline__provider-block__title .poster {
+        width: 166px;
+        height: 236px;
+    }
+}
+@media (min-width: 480px) {
+    .main-content__poster__image {
+        width: 139px;
+        height: 198px;
+    }
+}
+@media (min-width: 375px)
+{
+    .main-content__poster__image {
+
+        width: 163px;
+        height: 232px;
+    }
+}
+@media (min-width: 360px) {
+    .main-content__poster__image {
+        width: 156px;
+        height: 222px;
     }
 }
 *, :after, :before {
@@ -132,14 +170,14 @@ div {
 }
 
 .img-bg {
-    background-image: url("../img/cinema-red-salle.jpg") ;
+    background-image: url("../img/cinema-blue-salle.jpg") ;
     /*background-image: url("../img/bg_at-the-movies.jpg") ;*/
     /* Set rules to fill background */
     min-height: 100%;
-    min-width: 1024px;
+    min-width: 100%;
 
     /* Set up proportionate scaling */
-    width: 100%;
+    max-width: 100%;
     height: auto;
 
     /* Set up positioning */

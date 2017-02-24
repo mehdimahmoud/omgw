@@ -47,6 +47,7 @@ dependencies {
 	compile('org.webjars:bootstrap:3.3.7')
 	compile('org.webjars:bootstrap-material-design:0.5.9')
 	compile('org.webjars.bower:animate.css:3.5.2')
+	compile('org.webjars.bower:ng-scrollbars:0.0.10')
 //	compile('org.webjars.bower:angular:1.6.2')
 //	compile('org.webjars.bower:angular-route:1.6.2')
 //	compile('org.webjars.bower:angular-resource:1.6.2')
