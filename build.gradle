@@ -42,11 +42,14 @@ dependencies {
 	// Spring MVC (RestController + RestTemplate) + embedded servlet Tomcat
 	compile('org.springframework.boot:spring-boot-starter-web')
 	// Web libraries managed/packaged by WebJars into JAR
-	compile('org.webjars:jquery:3.1.1-1')
-	compile('org.webjars:angularjs:1.6.1')
-	compile('org.webjars.bower:angular-route:1.6.1')
-	compile('org.webjars:bootstrap:3.3.7-1')
+	compile('org.webjars:jquery:3.1.1')
+	compile('org.webjars:angularjs:1.4.8')
+	compile('org.webjars:bootstrap:3.3.7')
 	compile('org.webjars:bootstrap-material-design:0.5.9')
+	compile('org.webjars.bower:animate.css:3.5.2')
+//	compile('org.webjars.bower:angular:1.6.2')
+//	compile('org.webjars.bower:angular-route:1.6.2')
+//	compile('org.webjars.bower:angular-resource:1.6.2')
 
 	// Test
 	testCompile('org.springframework.boot:spring-boot-starter-test')
@@ -59,6 +62,7 @@ task wrapper (type: Wrapper) {
 	gradleVersion = '3.3'
 }
 
+// Necessary to add static resources automatically while any changes
 bootRun {
 	addResources = true
 }

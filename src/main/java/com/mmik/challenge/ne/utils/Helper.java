@@ -16,7 +16,7 @@ public  class  Helper {
         String uriComponentsBuilder = UriComponentsBuilder.newInstance()
                 .fromHttpUrl(httpUrl)
                 .queryParams(queryMap).toUriString();
-        log.info(String.format("Builder URI = {%s}",uriComponentsBuilder));
+        log.info(String.format("Builder URI Endpoint = {%s}",uriComponentsBuilder));
         return uriComponentsBuilder;
     }
 }

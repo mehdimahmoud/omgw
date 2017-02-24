@@ -62,6 +62,7 @@ public class OpenMovieController extends BaseController{
 
         queryMap = new LinkedMultiValueMap<>();
         queryMap.add("i",id);
+        queryMap.add("plot","full");
         Optional<OmDetailsDTO> oOmD = openMovieService.getMovieDetails(queryMap);
         OmDetailsDTO omDetailsDTO = oOmD.get();
 

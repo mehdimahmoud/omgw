@@ -1,21 +1,20 @@
 angular
-    .module('movieApp', ['ngRoute','ngAnimate'])
-    .config(['$routeProvider','$locationProvider',function ($routeProvider, $locationProvider) {
+    .module('movieApp', ['ngRoute'])
+    .config(['$routeProvider',function ($routeProvider) {
         $routeProvider
             .when('/movies/:movieId',{
-                templateUrl: '../public/movieDetail.html',
+                templateUrl: '../public/movieDetails.html',
                 controller: 'MovieDetailsCtrl',
                 controllerAs: 'movie'
             })
             .when('/movies',{
-                templateUrl: '../public/listMovies.html',
+                templateUrl: '../public/moviesList.html',
                 controller: 'MovieListCtrl',
                 controllerAs: 'movies'
             })
             .otherwise({
                 redirectTo: '/'
             });
-        $locationProvider.html5Mode(true);
     }])
     .controller('MainCtrl', ['$route', '$routeParams', '$location',
         function MainCtrl($route, $routeParams, $location, $scope, $http) {
@@ -23,17 +22,18 @@ angular
             this.$routeParams = $routeParams;
             this.$location = $location;
 
-            $scope.searchSubmit = function () {
+            this.searchSubmit = function() {
+                console.log('searchValue: ' + $routeParams);
                 $http({
                     method: 'GET',
                     url: '/movies',
-                    params: {title: $scope.searchValue}
+                    params: {title: this.searchValue}
                 }).then(function successCallBack(response) {
 
-                })
+                });
             };
         }
-        ])
+    ])
     .controller('MovieDetailsCtrl',['$routeParams',
         function MovieDetailsCtrl($routeParams) {
             this.name = 'MovieDetailsCtrl';

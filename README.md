@@ -57,7 +57,7 @@ on windows:
 on linux:
 >http://localhost:8090/health
 
-##2. Or with Docker
+##2. Or with/on Docker
 Once your docker image mmik/omgw is built as explained above, so you can boot the application:
 >docker run -it --name=c_omgw -p 8090:8090 -p 8091:8091 mmik/omgw:latest
 

@@ -4,6 +4,9 @@ services:
       container_name: c_omgw
       build: ./build/docker
       image: mmik/omgw:latest
+      expose:
+        - "8090"
+        - "8091"
       ports:
         - "8090:8090"
         - "8091:8091"

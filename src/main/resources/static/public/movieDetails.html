@@ -1,0 +1,50 @@
+<div class="col-md-12 animated zoomInRight">
+    <div ng-if="!movie.movieData">
+        Loading results...
+    </div>
+
+    <div ng-if="movie.movieData.Response===true">
+        <div class="col-lg-4"><img ng-src="{{ movie.movieData.Poster=='N/A' ? 'http://placehold.it/150x220&text=N/A' : movie.movieData.Poster }}"
+                                   class="img-responsive thumbnail animated flip movie-poster">
+        </div>
+
+        <div class="col-md-8  text-left">
+            <span class="span-outer">
+             <a href="http://imdb.com/title/{{ movie.movieData.imdbID }}" target="_blank">{{ movie.movieData.Title }}</a>
+            </span>, {{ movie.movieData.Year }}
+
+            <p><strong>Released on:</strong> {{ movie.movieData.Released }} ({{ movie.movieData.Runtime }})</p>
+
+            <p>{{ movie.movieData.Plot }}</p>
+
+            <p class="outer-p">
+            <div class="inner-p">
+                <span class="label label-primary">Directors :</span> {{ movie.movieData.Director }}
+            </div>
+            <div class="inner-p">
+                <span class="label label-primary">Actors :</span> {{ movie.movieData.Actors }}
+            </div>
+            <div class="inner-p">
+                <span class="label label-primary">Genre :</span> {{ movie.movieData.Genre }}
+            </div>
+            </p>
+
+            <p class="outer-p-2">Ratings:<br>
+                <strong>IMDb Rating</strong>: <span class="label label-success">{{ movie.movieData.imdbRating }}</span><br>
+            </p>
+
+            <p class="outer-p-3">
+                <a ng-href="https://www.youtube.com/results?search_query={{ movie.movieData.Title }}" target="_blank" class="btn btn-default btn-xs btn-info">Watch Trailers!</a>
+                <span class="divider"></span>
+                <a ng-href="http://subscene.com/subtitles/title?q={{ movie.movieData.Title }}" target="_blank" class="btn btn-default btn-xs btn-info">Get Subtitles!</a>
+                <span class="divider"></span>
+                <a ng-href="http://www.theost.com/search/custom/?key={{ movie.movieData.Title }}" target="_blank" class="btn btn-default btn-xs btn-info">Hear Soundtracks!</a>
+                <span class="divider"></span>
+                <a ng-href="http://www.amazon.in/s/ref=nb_sb_noss_1?url=search-alias%3Ddvd&field-keywords={{ movie.movieData.Title }}" target="_blank" class="btn btn-default btn-xs btn-info">Buy this movie!</a>
+            </p></div>
+    </div>
+
+    <div ng-if="movie.movieData.Response==='false'">
+        No results found.
+    </div>
+</div>
