@@ -27,8 +27,8 @@ div {
     min-height: 100vh;
 }
 .wrapper {
-    padding-top: 49px;
-    padding-bottom: 0;
+    margin-top: 49px;
+    /*border: red 2px solid;*/
 }
 
 .container, .container-fluid {
@@ -72,12 +72,12 @@ div {
 
 .main-content__title-divider__title {
     margin-top: 5px;
-    padding: 1px 8px;
-    background: #0d2e3e;
-    border-radius: 20px;
+    padding: 5px 8px;
+    background: rgba(0, 0 , 0, .6);
+    border-radius: 15px;
     color: white;
 }
-@media (max-width: 1200px) {
+@media (max-width: 3200px) {
     .main-content__poster {
         padding: 2px;
         margin: 5px 5px 0;
@@ -170,26 +170,29 @@ div {
 }
 
 .img-bg {
-    background-image: url("../img/cinema-blue-salle.jpg") ;
-    /*background-image: url("../img/bg_at-the-movies.jpg") ;*/
+
+    background: url("../img/cinema-blue-salle.jpg") center no-repeat;
+    /*background-size: cover;*/
     /* Set rules to fill background */
-    min-height: 100%;
-    min-width: 100%;
+     max-height: 100%;
+     min-width: 100%;
 
-    /* Set up proportionate scaling */
-    max-width: 100%;
-    height: auto;
+  /*   !* Set up proportionate scaling *!
+     max-width: 100%;
+     height: auto;
+*/
+     /* Set up positioning */
+    /* position: fixed;
+     top: 0;
+     left: 0;*/
 
-    /* Set up positioning */
-    position: fixed;
-    top: 0;
-    left: 0;
+
 }
 @media screen and (max-width: 1024px) { /* Specific to this particular image */
-    img.bg {
+   /* img.bg {
         left: 50%;
-        margin-left: -512px;   /* 50% */
-    }
+        margin-left: -512px;   !* 50% *!
+    }*/
 }
 @media (max-width: 992px) {
     .navbar-header {

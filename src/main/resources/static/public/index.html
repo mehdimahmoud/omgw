@@ -4,16 +4,17 @@
 <title>Open Movie Home</title>
 <link rel="stylesheet" href="../css/global.css"/>
 <link rel="stylesheet" href="../css/main.css"/>
-<body ng-controller="MainCtrl as main">
+<body class="img-bg">
 <!--<body>-->
 <div class="container-fluid img-bg">
-    <div class="container-fluid header">
-        <!--<div ng-include="'fragment/navigBar.html'"></div>-->
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="header" >
+        <div id="navigbar" ng-include="'public/partials/navigbar.html'" class="col-md-12"></div>
+        <!--<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container-fluid">
-                <!-- Brand and toggle get grouped for better mobile display -->
+                &lt;!&ndash; Brand and toggle get grouped for better mobile display &ndash;&gt;
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#myNavbar-collapsible">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -22,31 +23,35 @@
                     <a class="navbar-brand" href="#">MyMovie</a>
                 </div>
 
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                &lt;!&ndash; Collect the nav links, forms, and other content for toggling &ndash;&gt;
+                <div class="collapse navbar-collapse" id="myNavbar-collapsible">
                     <ul class="nav navbar-nav">
                         <li><a href="#">MOVIES</a></li>
                         <li><a href="#">TV SHOWS</a></li>
                         <li><a href="#/movies">CINEMA</a></li>
                     </ul>
                     <form class="navbar-form navbar-left" role="search">
-                        <!--<div class="form-group">
+                        &lt;!&ndash;<div class="form-group">
                             <input type="text" class="form-control" placeholder="Search">
                         </div>
-                        <button type="submit" class="btn btn-default">Submit</button>-->
+                        <button type="submit" class="btn btn-default">Submit</button>&ndash;&gt;
                         <div class="search input-group">
-                            <input type="text" class="form-control" id="searchId" ng-model="searchValue" ng-click="focusOnIt()" ng-model-options="{ debounce: 800 }" placeholder="Search for movie or Tv Shows" ng-required="required" autofocus/>
-                            <span class="input-group-addon input-group-btn" ng-click="searchSubmit()">
-                            <i class=" search__icon glyphicon glyphicon-search"></i>
-                        </span>
+                            <input type="text" class="search__input form-control hidden-xs ng-pristine ng-valid ng-touched ng-empty" id="searchId" ng-model="searchValue"
+                                   ng-click="focusOnIt()" ng-model-options="{ debounce: 800 }"
+                                   placeholder="Search for movie or Tv Shows" ng-required="required"/>
+                            <a href="#/movies" class="input-group-addon input-group-btn" ng-click="searchSubmit()">
+                                    <i class="search__icon glyphicon glyphicon-search"></i>
+                            </a>
                         </div>
                     </form>
                     <ul class="nav navbar-nav navbar-right">
-                        <!--<li><a href="#">Link</a></li>-->
-                        <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span></a></li>
+                        &lt;!&ndash;<li><a href="#">Link</a></li>&ndash;&gt;
+                        <li><a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                                class="glyphicon glyphicon-user"></span></a></li>
                         <li class="dropdown">
-                            <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>-->
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-option-vertical"></span></a>
+                            &lt;!&ndash;<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>&ndash;&gt;
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                                    class="glyphicon glyphicon-option-vertical"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">About us</a></li>
                                 <li><a href="#">Press</a></li>
@@ -54,22 +59,23 @@
                             </ul>
                         </li>
                     </ul>
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
-        </nav>
+                </div>&lt;!&ndash; /.navbar-collapse &ndash;&gt;
+            </div>&lt;!&ndash; /.container-fluid &ndash;&gt;
+        </nav>-->
     </div>
     <!-- -->
-    <div class="container-fluid wrapper">
+    <div class="wrapper">
         <div class="max-width-padding" id="content">
             <div class="main-content row">
                 <div class="main-content__title-divider">
-                    <span class="main-content__title-divider__title">{{ total=(parseInt(movieList.totalResults) * 10 | number) > 0 ?total:0}}<span> title(s) found </span></span>
+                    <span class="main-content__title-divider__title">{{ totalResults }}<span> title(s) found </span></span>
                 </div>
-                <div  class="container-view" ng-view>
+                <div class="container-view" ng-view>
                 </div>
             </div>
         </div>
-    </div></div>
+    </div>
+</div>
 
 <script type="text/javascript" src="webjars/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="webjars/angularjs/1.4.8/angular.min.js"></script>
@@ -77,7 +83,6 @@
 <script type="text/javascript" src="webjars/angularjs/1.4.8/angular-route.min.js"></script>
 <script type="text/javascript" src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="webjars/bootstrap-material-design/0.5.9/js/material.min.js"></script>
-<script type="text/javascript" src="webjars/ng-scrollbars/0.0.10/src/scrollbars.js"></script>
 <script type="text/javascript" src="../js/index.js"></script>
 <link rel="stylesheet" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
 <link rel="stylesheet" href="webjars/animate.css/3.5.2/animate.min.css"/>

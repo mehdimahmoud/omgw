@@ -1,0 +1,32 @@
+<div class="animated slideInDown">
+    <div class="main-content__poster"
+         ng-repeat="movie in movieList">
+        <div class="main-content__poster__image">
+            <a href="#/movie/{{movie.imdbID}}" ng-click="open()" data-toggle="modal" data-target="#myModal">
+                <img class="img-responsive" style="width: 100%; height: auto; opacity: 1;"
+                     ng-src="{{movie.Poster == 'N/A' ? 'http://placehold.it/150x220&text=N/A': movie.Poster}}"
+                     fader-on-load/>
+            </a>
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Modal Header</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Some text in the modal.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
