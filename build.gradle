@@ -63,9 +63,15 @@ task wrapper (type: Wrapper) {
 	gradleVersion = '3.3'
 }
 
-// Necessary to add static resources automatically while any changes
+// Necessary to add static resources automatically while any changes in Dev Environment
 bootRun {
 	addResources = true
+}
+
+task resolveAllDependencies {
+	doLast {
+		configurations.all { it.resolve() }
+	}
 }
 
 group = "mmik"

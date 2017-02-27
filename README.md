@@ -3,6 +3,9 @@ This project is a challenge with NE to build a client application in AngularJs
 from which we can access at the movie gateway API that acts as proxy of OmDB API 
 (www.omdbapi.com).
 
+# Test onLive
+https://moviesroom.herokuapp.com/
+
 # HOW TO EXPLOIT IT
 If you don't want to clone the project you can test immediately the project 
 if you have already docker-engine on your machine.
@@ -37,6 +40,7 @@ This task carries out in one task two important tasks:
 
 On the console, you can see two embedded tomcat's instances. So you get three interesting access to test:
 1. The application portal:
+
 on windows: 
 >http://192.168.99.100:8090/
 
