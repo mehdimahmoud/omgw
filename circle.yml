@@ -6,13 +6,11 @@ machine:
   environment:
     TERM: dumb
 
-before_install:
- - chmod +x gradlew
-
 dependencies:
   cache_directories:
     - ~/.gradle
   override:
+    - chmod +x gradlew
     - ./gradlew resolveAllDependencies
 
 test:
@@ -21,3 +19,10 @@ test:
   post:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
     - find . -type f -regex ".*/build/test-results/TEST-.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
+
+## Customize deployment commands
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: moviesroom
