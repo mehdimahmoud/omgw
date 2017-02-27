@@ -6,6 +6,9 @@ machine:
   environment:
     TERM: dumb
 
+before_install:
+ - chmod +x gradlew
+
 dependencies:
   cache_directories:
     - ~/.gradle
