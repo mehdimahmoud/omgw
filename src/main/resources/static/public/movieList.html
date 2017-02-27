@@ -2,7 +2,7 @@
     <div class="main-content__poster"
          ng-repeat="movie in movieList">
         <div class="main-content__poster__image">
-            <a href="#/movie/{{movie.imdbID}}" ng-click="open()" data-toggle="modal" data-target="#myModal">
+            <a href="#/movies/{{movie.imdbID}}" ng-click="open()" data-toggle="modal" data-target="#myModal">
                 <img class="img-responsive" style="width: 100%; height: auto; opacity: 1;"
                      ng-src="{{movie.Poster == 'N/A' ? 'http://placehold.it/150x220&text=N/A': movie.Poster}}"
                      fader-on-load/>
