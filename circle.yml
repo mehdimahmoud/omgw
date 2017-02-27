@@ -26,3 +26,20 @@ deployment:
     branch: master
     heroku:
       appname: moviesroom
+    commands:
+          - |
+            cat >~/.netrc <<EOF
+            machine api.heroku.com
+              login $HEROKU_EMAIL
+              password $HEROKU_TOKEN
+            machine git.heroku.com
+              login $HEROKU_EMAIL
+              password $HEROKU_TOKEN
+            EOF
+          - chmod 600 ~/.netrc # Heroku cli complains about permissions without this
+          - heroku maintenance:on --app moviesroom
+          - heroku scale worker=0 --app moviesroom
+          - git push git@heroku.com:moviesroom.git $CIRCLE_SHA1:refs/heads/master
+          - heroku run rake db:migrate --app moviesroom
+          - heroku scale worker=x --app moviesroom
+          - heroku maintenance:off --app moviesroom
