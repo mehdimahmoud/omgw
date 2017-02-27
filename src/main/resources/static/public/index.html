@@ -4,11 +4,11 @@
 <title>Open Movie Home</title>
 <link rel="stylesheet" href="../css/global.css"/>
 <link rel="stylesheet" href="../css/main.css"/>
-<body class="img-bg">
+<body class="img-bg" ng-controller="MainCtrl as main">
 <!--<body>-->
 <div class="container-fluid img-bg">
     <div class="header" >
-        <div id="navigbar" ng-include="'public/partials/navigbar.html'" class="col-md-12"></div>
+        <div id="navigbar" ng-include="'public/partials/navigbar.html'"></div>
         <!--<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container-fluid">
                 &lt;!&ndash; Brand and toggle get grouped for better mobile display &ndash;&gt;
@@ -68,7 +68,7 @@
         <div class="max-width-padding" id="content">
             <div class="main-content row">
                 <div class="main-content__title-divider">
-                    <span class="main-content__title-divider__title">{{ totalResults }}<span> title(s) found </span></span>
+                    <span class="main-content__title-divider__title">{{ totalResults != null ? totalResults : 0}}<span> title(s) found </span></span>
                 </div>
                 <div class="container-view" ng-view>
                 </div>
