@@ -27,14 +27,15 @@ angular
     .controller('MovieListCtrl', ['$routeParams', '$scope', '$http', MovieListCtrl]);
 
 function MainCtrl($scope, $http) {
-
+    console.log("MainCtrl = MainCtrl");
     $scope.$watch('searchValue', function () {
         fetch();
     });
 
     // Initialization
-    $scope.searchValue = "Batman";
-    console.log("MainCtrl = MainCtrl");
+    console.log("$scope.searchValue = " + $scope.searchValue);
+    $scope.searchValue = "Superman";
+
     function fetch() {
         if (!jQuery.isEmptyObject($scope.searchValue)) {
             $http({

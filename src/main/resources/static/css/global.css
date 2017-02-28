@@ -23,12 +23,12 @@ div {
     z-index: 1000;
 }
 
+.wrapper {
+    margin-top: 60px;
+    /*border: red 2px solid;*/
+}
 [ui-view="main"] {
     min-height: 100vh;
-}
-.wrapper {
-    margin-top: 49px;
-    /*border: red 2px solid;*/
 }
 
 .container, .container-fluid {
@@ -43,7 +43,7 @@ div {
 
 .container-view {
     /*overflow-y: auto !important;*/
-    overflow: auto hidden;
+    overflow: auto;
     max-height: 100vh;
 
 }
@@ -258,6 +258,12 @@ div {
 
 .divider:before {
     content: "|";
+}
+
+.well.well-bg-black {
+    background: rgba(0, 0, 0, .6) !important;
+    color: white;
+    border-radius: 25px !important;
 }
 
 
