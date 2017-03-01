@@ -5,6 +5,7 @@ services:
       container_name: c_omgw
       build:
          context: ./build/docker
+         dockerfile: ./build/docker/Dockerfile
 #      image: mmik/omgw:latest
       expose:
         - "8090"
