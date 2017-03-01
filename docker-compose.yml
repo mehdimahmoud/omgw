@@ -1,8 +1,10 @@
 version: '2'
+
 services:
    omgw:
       container_name: c_omgw
-      build: ./build/docker
+      build:
+         context: ./build/docker
       image: mmik/omgw:latest
       expose:
         - "8090"
