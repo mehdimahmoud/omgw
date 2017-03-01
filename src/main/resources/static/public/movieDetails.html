@@ -3,12 +3,12 @@
         Loading results...
     </div>
 
-    <div ng-if="movie.movieData.Response===true">
-        <div class="col-lg-4"><img ng-src="{{ movie.movieData.Poster=='N/A' ? 'http://placehold.it/150x220&text=N/A' : movie.movieData.Poster }}"
+    <div ng-if="movie.movieData.Response===true" class="parent-vertical-align">
+        <div class="col-lg-4 child-vertical-align"><img ng-src="{{ movie.movieData.Poster=='N/A' ? 'http://placehold.it/150x220&text=N/A' : movie.movieData.Poster }}"
                                    class="img-responsive thumbnail animated flip movie-poster">
         </div>
 
-        <div class="col-md-8  text-left">
+        <div class="col-md-8  child-vertical-align text-left">
             <span class="span-outer">
              <a href="http://imdb.com/title/{{ movie.movieData.imdbID }}" target="_blank">{{ movie.movieData.Title }}</a>
             </span>, {{ movie.movieData.Year }}

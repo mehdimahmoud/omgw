@@ -54,6 +54,7 @@ function MainCtrl($scope, $http) {
                 }
             );
         } else { // reset
+            console.log("reset - $scope.searchValue = " + $scope.searchValue);
             $scope.movieList = {};
             $scope.totalResults = 0;
         }
@@ -79,7 +80,7 @@ function MovieListCtrl($routeParams, $scope, $http) {
     console.log("controller = MovieListCtrl");
     console.log("$scope = "+ $scope);
     console.log("$routeParams = "+ $routeParams[1]);
-    console.log("searchValue = "+ $scope.$parent.searchValue);
+    console.log("searchValue = "+ $scope.searchValue);
     if (!jQuery.isEmptyObject($scope.searchValue)) {
         $http({
             method: 'GET',
@@ -95,6 +96,10 @@ function MovieListCtrl($routeParams, $scope, $http) {
                 console.log("Error = " + errorMessage.data.Error);
             }
         );
+    }else { // reset
+        console.log("reset - searchValue = " + $scope.searchValue);
+        $scope.movieList = {};
+        $scope.totalResults = 0;
     }
     /*var moviesVm = this;
      moviesVm.movieList;
