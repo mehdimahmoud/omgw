@@ -5,11 +5,11 @@ services:
       container_name: c_omgw
       build:
          context: ./build/docker
-      image: mmik/omgw:latest
+#      image: mmik/omgw:latest
       expose:
         - "8090"
         - "8091"
       ports:
         - "8090:8090"
         - "8091:8091"
-      command: ./gradlew bootRun
+#      command: ./gradlew bootRun
