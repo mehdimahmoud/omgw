@@ -1,5 +1,7 @@
+[![CircleCI](https://circleci.com/gh/mehdimahmoud/omgw/tree/master.svg?style=svg)](https://circleci.com/gh/mehdimahmoud/omgw/tree/master)
+
 # INTRODUCTION
-This project is a challenge with NE to build a client application in AngularJs 
+This project is a challenge from NE to build a client application in AngularJs 
 from which we can access at the movie gateway API that acts as proxy of OmDB API 
 (www.omdbapi.com).
 
